@@ -1,4 +1,4 @@
-name: Build and Push Docker Image to ECR and Deploy to EC2 Minikube Server
+name: Build and Push Docker Image to ECR and Deploy K8S Cluster
 
 on:
   push:
