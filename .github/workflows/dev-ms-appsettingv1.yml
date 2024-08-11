@@ -78,7 +78,7 @@ jobs:
 
     - name: Copy deployment.yml to EC2 instance
       run: |
-        scp -i key.pem -o StrictHostKeyChecking=no .dev-appsetting-deployment1.yml ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} :/home/${{ secrets.EC2_USER }}/dev-appsetting-deployment1.yml
+        scp -i key.pem -o StrictHostKeyChecking=no /home/runner/work/cicd-testing/cicd-testing/dev-appsetting-deployment1.yml ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} :/home/${{ secrets.EC2_USER }}/dev-appsetting-deployment1.yml
 
     # - name: Deploy to Kubernetes cluster
     #   run: |
