@@ -82,8 +82,6 @@ jobs:
 
     - name: Deploy to Kubernetes cluster
       run: |
-        ssh -i key.pem -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} "/home/${{ secrets.EC2_USER }}/touch hello.txt"
-
-
+        ssh -i key.pem -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} "touch /home/${{ secrets.EC2_USER }}/hello.txt"
 
   
