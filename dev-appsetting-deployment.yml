@@ -18,7 +18,7 @@ spec:
         - name: dev-appsettingv1
           image: 471112842990.dkr.ecr.ap-south-1.amazonaws.com/dev-appsetting-ecr-repo:latest
           ports:
-            - containerPort: 9000 # Expose por in the container
+            - containerPort: 9000 # Expose port in the container
 ---
 apiVersion: v1
 kind: Service
@@ -30,5 +30,6 @@ spec:
     app: dev-appsettingv1
   ports:
     - protocol: TCP
-      port: 9000      # The port exposed by the service
-      targetPort: 9000 # The port the application listens on in the container
+      port: 9000        # The port exposed by the service
+      targetPort: 9000  # The port the application listens on in the container
+      nodePort: 30008   # The NodePort that will be used to access the service
